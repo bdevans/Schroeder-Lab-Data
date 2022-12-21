@@ -33,6 +33,15 @@
 		}
 	},
 
+	// Uncomment the "mounts" block below after editing the paths to mount host folders in the container
+	// Note: Do not push these changes to the repository
+	"mounts": [
+		// This example mounts folders relative to your home directory
+		// "source=${localEnv:HOME}${localEnv:USERPROFILE}/Documents/GitHub,target=/workspaces/Schroeder-Lab-Data/data,type=bind,consistency=cached",
+		// This example mounts folders with an absolute path
+		// "source=D:/task_2p,target=/workspaces/Schroeder-Lab-Data/2pdata,type=bind,consistency=cached"
+	],
+
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "pip3 install --user -r requirements.txt",
 	"postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
