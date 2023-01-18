@@ -53,7 +53,8 @@ RUN mamba install --quiet --yes \
 
 # [Optional] If your pip requirements rarely change, uncomment this section to add them to the image.
 COPY requirements.txt /tmp/pip-tmp/
-RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
+# COPY requirements-plain.txt /tmp/pip-tmp/requirements.txt
+RUN python -m pip --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
    && rm -rf /tmp/pip-tmp
 
 # COPY --chown=${NB_UID}:${NB_GID} requirements.txt /tmp/
