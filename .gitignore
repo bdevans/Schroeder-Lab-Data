@@ -128,3 +128,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .idea/workspace.xml
+
+# VS Code
+.devcontainer/frozen-requirements.txt
